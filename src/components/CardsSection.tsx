@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function CardsSection() {
   return (
     <main className="bg-background">
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+  <section className="mx-auto w-full px-4 sm:px-6 lg:px-20 py-16">
         <div className="rounded-xl border border-border bg-card shadow-sm">
           <div className="flex flex-col md:grid md:grid-cols-3">
             {highlights.map((item, index) => (

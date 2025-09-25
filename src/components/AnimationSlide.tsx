@@ -10,27 +10,30 @@ const marqueeItems = [
 
 export default function AnimationSlide() {
   return (
-    <main className="  bg-background text-foreground">
-      <section className="mx-auto w-full max-w-6xl px-4 py-16">
-        <div className="rounded-md border border-border bg-card shadow-sm">
-          <div className="overflow-hidden border-y border-border">
+    <main className="w-full bg-background text-foreground">
+      <section className="w-full py-8">
+        <div className="w-full border-y border-border bg-card shadow-sm">
+          <div className="overflow-hidden w-full">
             <div className="relative flex w-full">
-              <ul className="animate-marquee flex min-w-[200%] flex-none items-center">
+              <ul className="animate-marquee flex min-w-[200%] flex-none items-center w-full">
                 {Array.from({ length: 2 }).map((_, loopIndex) => (
-                  <li
+                  <h1
                     key={loopIndex}
                     aria-hidden={loopIndex === 1}
-                    className="flex flex-none items-center gap-8 whitespace-nowrap px-6 py-4 text-sm italic leading-relaxed text-muted-foreground md:text-base"
+                    className="flex flex-none items-center gap-8 whitespace-nowrap px-0 py-4 text-sm italic leading-relaxed text-muted-foreground md:text-base w-full"
                   >
                     {marqueeItems.map((item, itemIndex) => (
-                      <span key={`${loopIndex}-${itemIndex}`} className="flex flex-none items-center gap-8">
-                        <span className="tracking-tight text-foreground/70">{item}</span>
-                        <span aria-hidden className="text-foreground/30">
+                      <span
+                        key={`${loopIndex}-${itemIndex}`}
+                        className="flex flex-none items-center gap-4 md:gap-8"
+                      >
+                        <span className="tracking-tight text-foreground/70 text-xs md:text-base">{item}</span>
+                        <span aria-hidden className="text-foreground/30 text-lg md:text-xl">
                           {"◦"}
                         </span>
                       </span>
                     ))}
-                  </li>
+                  </h1>
                 ))}
               </ul>
             </div>
@@ -49,6 +52,18 @@ export default function AnimationSlide() {
 
         .animate-marquee {
           animation: marquee 22s linear infinite;
+        }
+
+        @media (max-width: 640px) {
+          .animate-marquee span {
+            font-size: 0.85rem;
+            gap: 0.5rem;
+          }
+          .animate-marquee li {
+            gap: 0.5rem;
+            padding-left: 0;
+            padding-right: 0;
+          }
         }
       `}</style>
     </main>

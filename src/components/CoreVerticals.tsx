@@ -92,7 +92,7 @@ function VerticalCard({ vertical }: { vertical: Vertical }) {
 export default function CoreVerticals() {
   return (
     <main className="bg-background">
-      <section className="mx-auto flex max-w-screen-2xl flex-col gap-12 px-4 py-16 sm:px-6 lg:px-12 xl:px-16">
+  <section className="mx-auto flex w-full flex-col gap-12 px-4 sm:px-6 lg:px-20 py-16">
         <header className="max-w-3xl space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">Verticals 00</p>
           <h2 className="text-pretty text-3xl font-semibold text-foreground sm:text-4xl lg:text-5xl">

@@ -27,28 +27,46 @@ const stats = [
 export default function AboutUs() {
   return (
     <main className="bg-[var(--color-neutral-50)] px-4 py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto max-w-6xl">
+  <div className="mx-auto w-full px-4 sm:px-6 lg:px-20">
         <section className="flex flex-col gap-16">
           <div className="grid gap-6 md:grid-cols-3">
-            {stats.map((stat) => (
-              <article
-                key={stat.title}
-                className="rounded-[1.5rem] shadow-sm"
-                style={{ backgroundColor: `var(${stat.backgroundVar})` }}
-              >
-                <div className="px-8 pt-10">
-                  <p className="text-4xl font-semibold tracking-tight text-[var(--color-neutral-50)] lg:text-[2.75rem]">
-                    {stat.value}
-                  </p>
-                </div>
-                <div className="px-8 pb-10">
-                  <h3 className="text-lg font-medium text-[var(--color-neutral-50)]">{stat.title}</h3>
-                  <p className="mt-4 text-sm leading-relaxed text-[var(--color-neutral-50)] opacity-80">
-                    {stat.description}
-                  </p>
-                </div>
-              </article>
-            ))}
+              {[
+                {
+                  value: "1000+",
+                  title: "Connections Built & Growing",
+                  description:
+                    "Our Consultants provide the highest quality advice and technical support and will assist your organization",
+                  bg: "#215273",
+                },
+                {
+                  value: "24/7",
+                  title: "Community Support",
+                  description:
+                    "A global digital platform where members connect, share, and collaborate anytime — beyond events and borders.",
+                  bg: "#C09755",
+                },
+                {
+                  value: "95%",
+                  title: "Member Satisfaction",
+                  description:
+                    "Entrepreneurs and SMEs trust TakeOff for curated opportunities, mentorship, and global market access.",
+                  bg: "#359D9E",
+                },
+              ].map((stat, idx) => (
+                <article
+                  key={stat.title}
+                  className="rounded-[1.5rem] shadow-sm flex flex-col justify-between min-h-[320px]"
+                  style={{ backgroundColor: stat.bg }}
+                >
+                  <div className="px-8 pt-10">
+                    <h1 className="text-5xl font-semibold tracking-tight text-white lg:text-[2.75rem]">{stat.value}</h1>
+                  </div>
+                  <div className="px-8 pb-10">
+                    <h2 className="text-xl font-semibold italic text-white mb-2">{stat.title}</h2>
+                    <p className="mt-2 text-base leading-relaxed text-white opacity-90">{stat.description}</p>
+                  </div>
+                </article>
+              ))}
           </div>
 
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">

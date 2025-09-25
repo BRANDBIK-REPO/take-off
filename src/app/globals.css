@@ -1,4 +1,42 @@
+
 @import "tailwindcss";
+
+/* WantedSans font-face */
+@font-face {
+  font-family: 'WantedSans';
+  src: url('../../public/fonts/WantedSans-Regular-BF65baf13579965.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'WantedSans';
+  src: url('../../public/fonts/WantedSans-Medium-BF65baf1388963b.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'WantedSans';
+  src: url('../../public/fonts/WantedSans-SemiBold-BF65baf13722853.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'WantedSans';
+  src: url('../../public/fonts/WantedSans-Bold-BF65baf135d5a25.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+ 
+
+:root {
+  --font-wanted-sans: 'WantedSans', Arial, sans-serif;
+  --font-dm-serif-display: 'DM Serif Display', serif;
+}
 
  
 
@@ -114,11 +152,21 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-wanted-sans), Arial, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6,
+  .font-serif,
+  .main-heading,
+  .main-text {
+    font-family: var(--font-dm-serif-display), serif;
+    font-style: italic;
+    font-weight: 400;
   }
 }

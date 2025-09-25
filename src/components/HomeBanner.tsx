@@ -3,57 +3,77 @@ import Link from "next/link"
 export default function HomeBanner() {
   return (
     <main className="bg-background">
-      <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col-reverse gap-12 px-6 py-16 md:px-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+      <section
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '60px 0',
+          maxWidth: '1400px',
+          margin: '0 auto',
+        }}
+      >
         <div className="flex flex-1 flex-col gap-8">
           <div className="space-y-6">
-            <h1 className="text-balance text-4xl font-semibold leading-tight text-foreground md:text-5xl lg:text-6xl">
-              Your Flight to Success is Ready for <span className="italic text-primary">TakeOff</span>
+            <h1
+              style={{
+                color: '#215273',
+                fontSize: '3.2rem',
+                fontWeight: 700,
+                lineHeight: 1.1,
+                marginBottom: '24px',
+                 
+              }}
+            >
+              Your Flight to Success is<br />
+              Ready for <span style={{ fontStyle: 'italic', fontWeight: 500 }}>TakeOff</span>
             </h1>
             <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              TakeOff is more than a network — it’s a launchpad for entrepreneurial growth. We connect SMEs, founders,
-              and professionals to think bigger, achieve more, and scale globally.
+              TakeOff is more than a network — it’s a launchpad for entrepreneurial growth.<br />
+              We connect SMEs, founders, and professionals to think bigger, achieve more, and scale globally.
             </p>
-            <Link
-              href="#"
-              aria-label="Join the TakeOff community"
-              className="inline-flex h-14 items-center justify-center gap-3 self-start rounded-full bg-primary px-7 text-sm font-medium text-primary-foreground transition-colors hover:bg-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:text-base"
+            <button
+              style={{
+                background: '#215273',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '32px',
+                padding: '16px 40px',
+                fontSize: '1.1rem',
+                fontWeight: 500,
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px rgba(33,82,115,0.08)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                marginBottom: '40px',
+                transition: 'background 0.2s',
+              }}
             >
               Join the Community
-              <span
-                aria-hidden
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-primary"
-              >
-                <svg
-                  className="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m13 6 6 6-6 6" />
-                </svg>
-              </span>
-            </Link>
+              <span style={{ fontSize: '1.3rem', fontWeight: 700 }}>&rarr;</span>
+            </button>
           </div>
           <p className="text-sm text-muted-foreground md:text-base">
             Connections | Knowledge | Opportunities | Visibility | Support | Growth
           </p>
         </div>
-        <div className="flex flex-1 justify-center">
-          <div className="relative w-full max-w-[520px] overflow-hidden rounded-[2.5rem] border border-border bg-card shadow-lg">
-            <div className="aspect-[4/3]">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-zZpJwZcyOm0cqI8J610z9RjdqBlNuw.png"
-                alt="Business leaders meeting in a high-rise boardroom overlooking the city skyline"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
+        {/* Right Side: Image */}
+        <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+          <img
+            src="/banner.png"
+            alt="TakeOff Banner"
+            style={{
+              width: '90%',
+              maxWidth: '600px',
+              borderRadius: '40px',
+              boxShadow: '0 4px 32px rgba(33,82,115,0.10)',
+              objectFit: 'cover',
+            }}
+          />
         </div>
       </section>
     </main>
-  )
+  );
 }
+ 

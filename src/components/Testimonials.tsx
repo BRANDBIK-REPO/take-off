@@ -42,7 +42,7 @@ function StarIcon(props: React.SVGProps<SVGSVGElement>) {
 export function Testimonials() {
   return (
     <section className="bg-background">
-      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+  <div className="mx-auto flex w-full flex-col gap-12 px-4 sm:px-6 lg:px-20 py-16 lg:py-24">
         <header className="max-w-xl space-y-3">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">Our testimonials</p>
           <h1 className="text-balance text-4xl font-semibold text-foreground sm:text-5xl">Growth Journeys</h1>

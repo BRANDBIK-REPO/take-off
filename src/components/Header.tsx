@@ -1,4 +1,8 @@
+"use client"
+
 import type { SVGProps } from "react"
+import Image from "next/image"
+import { useState } from "react"
 
 const contactItems = [
   {
@@ -21,20 +25,22 @@ const contactItems = [
 const navLinks = ["Home", "About", "Verticals", "Membership", "Events", "Community"]
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <main className="bg-background text-foreground">
-      <header className="border-b border-border">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 py-3 md:flex-row md:items-center md:justify-between">
-          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-3">
+  <main className="bg-background text-foreground px-4 sm:px-6 lg:px-20 w-full">
+      {/* Top Contact Bar */}
+      <header className="border-b border-border w-full ">
+        <div className="mx-auto flex w-full   flex-col md:flex-row md:items-center md:justify-between   py-3 gap-2">
+          <div className="flex flex-col md:flex-row md:gap-10 gap-2 w-full">
             {contactItems.map(({ label, lines, Icon }) => (
-              <div key={label} className="flex items-start gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-muted text-foreground">
-                  <Icon className="h-4 w-4" aria-hidden />
+              <div key={label} className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#243533] text-white">
+                  <Icon className="h-5 w-5" aria-hidden />
                 </span>
-                <div className="space-y-1">
-                  <span className="text-[0.65rem] uppercase tracking-[0.35em] text-muted-foreground">{label}</span>
+                <div className="leading-tight">
+                  <span className="text-[0.7rem] font-semibold uppercase tracking-wide text-[#243533]">{label}</span>
                   {lines.map((line) => (
-                    <p key={line} className="text-sm font-medium text-foreground">
+                    <p key={line} className="text-[0.95rem] font-medium text-[#243533]">
                       {line}
                     </p>
                   ))}
@@ -42,26 +48,25 @@ export default function Header() {
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-end">
-            <span className="text-xs font-semibold uppercase tracking-[0.45em] text-muted-foreground">ENG</span>
+          <div className="flex items-center justify-end mt-2 md:mt-0">
+            <span className="text-xs font-semibold uppercase tracking-[0.45em] text-[#243533]">ENG</span>
           </div>
         </div>
       </header>
 
-      <div className="border-b border-border bg-background">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 py-5 md:flex-row md:items-center md:justify-between">
-          <Logo />
-          <nav className="w-full md:flex-1">
-            <ul className="flex min-w-max flex-nowrap items-center gap-3 overflow-x-auto pb-1 md:justify-center md:pb-0">
-              {navLinks.map((link, index) => (
-                <li key={link} className="flex-shrink-0">
+      {/* Main Header: Logo, Nav, Contact */}
+      <div className="border-b border-border bg-background w-full">
+        <div className="mx-auto flex w-full  items-center justify-between   py-5">
+          <div className="flex items-center gap-8">
+            <Logo />
+          </div>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex flex-1 justify-center">
+            <ul className="flex items-center gap-2">
+              {navLinks.map((link) => (
+                <li key={link}>
                   <a
-                    className={[
-                      "inline-flex items-center rounded-full border border-border px-6 py-2 text-sm font-medium transition-colors",
-                      index === 0
-                        ? "bg-muted text-foreground"
-                        : "bg-background text-muted-foreground hover:border-accent hover:text-foreground",
-                    ].join(" ")}
+                    className="inline-flex items-center rounded-full border border-[#E6E6E6] px-6 py-2 text-base font-medium text-[#243533] bg-white hover:bg-[#F5F5F5] transition"
                     href="#"
                   >
                     {link}
@@ -70,34 +75,66 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <div className="flex justify-start md:justify-end">
+          {/* Contact Button */}
+          <div className="hidden md:flex">
             <a
-              className="inline-flex items-center gap-3 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-sm transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-3 text-base font-semibold text-white shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#359D9E] focus-visible:ring-offset-2 bg-[#359D9E] hover:brightness-105"
               href="#"
             >
               Contact
-              <ArrowRightIcon className="h-4 w-4" aria-hidden />
+              <ArrowRightIcon className="h-5 w-5" aria-hidden />
             </a>
           </div>
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden flex items-center justify-center rounded-full border border-[#E6E6E6] p-2 bg-white"
+            aria-label="Open menu"
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <svg width="28" height="28" fill="none" stroke="#243533" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
         </div>
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="md:hidden px-4 pb-4 animate-fade-in">
+            <nav>
+              <ul className="flex flex-col gap-2">
+                {navLinks.map((link) => (
+                  <li key={link}>
+                    <a
+                      className="block w-full rounded-full border border-[#E6E6E6] px-6 py-3 text-base font-medium text-[#243533] bg-white hover:bg-[#F5F5F5] transition"
+                      href="#"
+                    >
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <a
+              className="mt-4 block w-full text-center rounded-full px-8 py-3 text-base font-semibold text-white shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#359D9E] focus-visible:ring-offset-2 bg-[#359D9E] hover:brightness-105"
+              href="#"
+            >
+              Contact <ArrowRightIcon className="inline h-5 w-5 ml-2" aria-hidden />
+            </a>
+          </div>
+        )}
       </div>
     </main>
+
   )
 }
 
 function Logo() {
   return (
-    <div className="flex flex-col gap-1 text-foreground">
-      <div className="flex items-center gap-2 text-lg font-semibold uppercase tracking-[0.55em]">
-        <span>TAKE</span>
-        <span className="inline-flex items-center gap-2">
-          <span>-</span>
-          <span>OFF</span>
-          <span className="inline-block h-2 w-2 rotate-45 rounded-sm bg-[var(--color-highlight)]" aria-hidden />
-        </span>
-      </div>
-      <span className="text-[0.65rem] uppercase tracking-[0.4em] text-muted-foreground">Business Network</span>
-    </div>
+    <Image
+      src="/logo.png"
+      alt="Take Off Business Network Logo"
+      height={48}
+      width={160}
+      className="h-12 w-auto object-contain"
+      priority
+    />
   )
 }
 
@@ -112,6 +149,8 @@ function PhoneIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   )
 }
+
+
 
 function MailIcon(props: SVGProps<SVGSVGElement>) {
   return (

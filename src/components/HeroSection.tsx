@@ -19,7 +19,7 @@ export function HeroSection() {
         aria-hidden="true"
       />
       <div className="relative z-10 flex w-full flex-col items-center px-4 py-20 text-center sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-8">
+  <div className="mx-auto flex w-full flex-col items-center gap-8 px-4 sm:px-6 lg:px-20">
           <h1 className="text-pretty text-3xl font-semibold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
             Join a trusted community of entrepreneurs, founders, and innovators building the future together.
           </h1>

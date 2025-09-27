@@ -255,7 +255,12 @@ export default function MembershipForm() {
                   </button>
                 )}
                 <button
-                  onClick={() => setStep((s) => Math.min(4, s + 1))}
+                  onClick={() => {
+                    if (typeof window !== "undefined") {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                    setStep((s) => Math.min(4, s + 1));
+                  }}
                   className="group cursor-pointer flex items-center justify-between rounded-full bg-[#215273] pl-4 pr-3 h-10 text-white text-base font-semibold shadow-[0_10px_20px_rgba(33,82,115,0.10)] hover:shadow-[0_12px_24px_rgba(33,82,115,0.18)] transition-all min-w-[120px]"
                   style={{ minWidth: 90 }}
                 >

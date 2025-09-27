@@ -75,14 +75,8 @@ function Stepper({
             <span
               className={[
                 "size-10 rounded-full border-2 grid place-items-center font-medium",
-                complete && s === 1
+                complete && (s === 1 || s === 2 || s === 3)
                   ? "bg-[#008373] border-[#008373] text-white animate-tick-in"
-                  : complete && s === 2
-                    ? "bg-[#008373] border-[#008373] text-white animate-tick-in"
-                  : complete
-                    ? "bg-[#215273] border-[#215273] text-white"
-                  : active && s === 3
-                    ? "bg-[#C09755] border-[#C09755] text-white animate-step-in"
                   : active
                     ? "bg-[#C09755] border-[#C09755] text-white"
                     : "bg-white border-[#215273] text-[#215273]",
@@ -90,7 +84,7 @@ function Stepper({
               ].join(" ")}
               style={{ fontWeight: 600, fontSize: 18, transition: 'background 0.4s, border 0.4s' }}
             >
-              {(complete && (s === 1 || s === 2)) ? (
+              {(complete && (s === 1 || s === 2 || s === 3)) ? (
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="animate-tick-check">
                   <circle cx="10" cy="10" r="9" fill="#008373" />
                   <path d="M6 10.5l2.5 2.5 5-5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

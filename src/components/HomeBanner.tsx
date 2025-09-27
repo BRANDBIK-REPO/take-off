@@ -1,8 +1,8 @@
-import Link from "next/link"
+ 
 
 export default function HomeBanner() {
   return (
-    <main className="bg-background">
+    <main className="bg-background w-full pt-[110px]">
       <section
         style={{
           display: 'flex',
@@ -12,6 +12,7 @@ export default function HomeBanner() {
           maxWidth: '1400px',
           margin: '0 auto',
         }}
+        className=""
       >
         <div className="flex flex-1 flex-col gap-8">
           <div className="space-y-6">

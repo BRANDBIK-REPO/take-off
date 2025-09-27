@@ -1,68 +1,82 @@
 "use client"
+import "./header-animations.css";
+
+
+ 
 
 import type { SVGProps } from "react"
 import Image from "next/image"
 import { useState } from "react"
+import { socialIcons } from "./socialIcons"
 
-const contactItems = [
-  {
-    label: "Call",
-    lines: ["+91 914 564 4568", "+91 859 036 9978"],
-    Icon: PhoneIcon,
-  },
-  {
-    label: "Email",
-    lines: ["info@takeoffbusinessnetwork.com"],
-    Icon: MailIcon,
-  },
-  {
-    label: "Location",
-    lines: ["Dubai World Trade Centre", "Sheikh Zayed Rd, Dubai, UAE"],
-    Icon: PinIcon,
-  },
-]
+const eventTitle = "Takeoff Business Conclave & Expedition to Explore Dubai";
+const eventLocation = ["Dubai World Trade Centre", "Sheikh Zayed Rd, Dubai, UAE"];
 
 const navLinks = ["Home", "About", "Verticals", "Membership", "Events", "Community"]
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
-  <main className="bg-background text-foreground px-4 sm:px-6 lg:px-20 w-full">
-      {/* Top Contact Bar */}
-      <header className="border-b border-border w-full ">
-        <div className="mx-auto flex w-full   flex-col md:flex-row md:items-center md:justify-between   py-3 gap-2">
-          <div className="flex flex-col md:flex-row md:gap-10 gap-2 w-full">
-            {contactItems.map(({ label, lines, Icon }) => (
-              <div key={label} className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#243533] text-white">
-                  <Icon className="h-5 w-5" aria-hidden />
-                </span>
-                <div className="leading-tight">
-                  <span className="text-[0.7rem] font-semibold uppercase tracking-wide text-[#243533]">{label}</span>
-                  {lines.map((line) => (
-                    <p key={line} className="text-[0.95rem] font-medium text-[#243533]">
-                      {line}
-                    </p>
-                  ))}
-                </div>
+    <main className="fixed top-0 left-0 w-full z-50 bg-background text-foreground px-0 sm:px-0 lg:px-0  ">
+      {/* Top Event Bar */}
+      <header className="w-full border-b border-border bg-white/80 backdrop-blur-md z-30 sticky top-0">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between px-4 sm:px-8 lg:px-20 py-2 gap-2">
+          {/* Desktop: event title left, location right of title, icons far right. Mobile: icons centered. */}
+          <div className="flex w-full items-center justify-between">
+            {/* Left section: event title and location (desktop only) */}
+            <div className="hidden md:flex items-center min-w-0">
+              <h2 className="text-base font-semibold text-[#22302d] bg-white px-3 py-1">{eventTitle}</h2>
+              <div className="flex flex-col md:ml-6 min-w-0">
+                <span className="text-sm text-[#178a86] font-semibold whitespace-nowrap">{eventLocation[0]}</span>
+                <span className="text-sm text-[#22302d] whitespace-nowrap">{eventLocation[1]}</span>
               </div>
-            ))}
-          </div>
-          <div className="flex items-center justify-end mt-2 md:mt-0">
-            <span className="text-xs font-semibold uppercase tracking-[0.45em] text-[#243533]">ENG</span>
+            </div>
+            {/* Mobile: only show icons centered in top bar, no event title/location */}
+            <div className="flex-1 flex md:hidden justify-center py-2">
+              <div className="flex gap-2">
+                {socialIcons.map(({ name, icon: Icon, href }) => (
+                  <a
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={name}
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow hover:bg-[#178a86] hover:text-white transition-all duration-300 hover:scale-110"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
+            {/* Desktop: icons on far right */}
+            <div className="hidden md:flex gap-2 ml-4">
+              {socialIcons.map(({ name, icon: Icon, href }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow hover:bg-[#178a86] hover:text-white transition-all duration-300 hover:scale-110"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </header>
 
       {/* Main Header: Logo, Nav, Contact */}
       <div className="border-b border-border bg-background w-full">
-        <div className="mx-auto flex w-full  items-center justify-between   py-5">
+        <div className="mx-auto flex w-full items-center justify-between px-4 sm:px-8 lg:px-20 py-5">
           <div className="flex items-center gap-8">
             <Logo />
           </div>
+
           {/* Desktop Nav */}
           <nav className="hidden md:flex flex-1 justify-center">
-            <ul className="flex items-center gap-2">
+            <ul className="flex items-center gap-2 text-base">
               {navLinks.map((link) => (
                 <li key={link}>
                   <a
@@ -96,7 +110,9 @@ export default function Header() {
         </div>
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden px-4 pb-4 animate-fade-in">
+          <div className="md:hidden px-2 pt-2 pb-4 bg-white/95 shadow-lg rounded-b-xl animate-slide-fade-in">
+            
+            {/* No social icons here on mobile menu */}
             <nav>
               <ul className="flex flex-col gap-2">
                 {navLinks.map((link) => (
@@ -119,6 +135,7 @@ export default function Header() {
             </a>
           </div>
         )}
+ 
       </div>
     </main>
 
@@ -132,7 +149,7 @@ function Logo() {
       alt="Take Off Business Network Logo"
       height={48}
       width={160}
-      className="h-12 w-auto object-contain"
+      className="h-8 sm:h-8 w-auto object-contain"
       priority
     />
   )

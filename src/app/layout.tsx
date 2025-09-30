@@ -22,17 +22,17 @@ const wantedSans = localFont({
     {
       path: "../../public/fonts/WantedSans-Medium-BF65baf1388963b.otf",
       weight: "500",
-      style: "normal"
+      style: "medium"
     },
     {
       path: "../../public/fonts/WantedSans-SemiBold-BF65baf13722853.otf",
       weight: "600",
-      style: "normal"
+      style: "semibold"
     },
     {
       path: "../../public/fonts/WantedSans-Bold-BF65baf135d5a25.otf",
       weight: "700",
-      style: "normal"
+      style: "bold"
     }
   ],
   variable: "--font-wanted-sans"

@@ -1,17 +1,16 @@
-
 @import "tailwindcss";
 
- 
- 
+
+
 
 :root {
   --font-wanted-sans: 'WantedSans', Arial, sans-serif;
   --font-dm-serif-display: 'DM Serif Display', serif;
 }
 
- 
 
- :root {
+
+:root {
   --background: white;
   --foreground: #22302d;
   --card: #ffffff;
@@ -45,6 +44,7 @@
   --sidebar-accent-foreground: #22302d;
   --sidebar-border: #dce2df;
   --sidebar-ring: #178a86;
+  --about-header-bg: #E5EBEA;
 }
 
 .dark {
@@ -83,8 +83,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-wanted-sans);
+  --font-serif: var(--font-dm-serif-display);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -129,14 +129,26 @@
     @apply border-border outline-ring/50;
     font-family: var(--font-wanted-sans), Arial, sans-serif;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-wanted-sans), Arial, sans-serif;
   }
+
   .font-sans {
     font-family: var(--font-wanted-sans), Arial, sans-serif !important;
   }
-  h1, h2, h3, h4, h5, h6,
+
+  .font-serif {
+    font-family: var(--font-dm-serif-display), serif !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
   .font-serif,
   .main-heading,
   .main-text {
@@ -150,34 +162,42 @@
 .text-brand {
   color: var(--brand);
 }
+
 .bg-brand {
   background-color: var(--brand);
 }
+
 .border-brand {
   border-color: var(--brand);
 }
+
 .text-gold {
   color: var(--gold);
 }
+
 .bg-gold {
   background-color: var(--gold);
 }
+
 .border-gold {
   border-color: var(--gold);
 }
 
 /* Decorative float for the top-right icon */
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
     opacity: 0.8;
   }
+
   50% {
     transform: translateY(-4px);
     opacity: 1;
   }
 }
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }

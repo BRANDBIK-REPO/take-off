@@ -8,11 +8,12 @@ import type { SVGProps } from "react"
 import Image from "next/image"
 import { useState } from "react"
 import { socialIcons } from "./socialIcons"
+import { navLinks } from "@/constants/navLinks";
 
 const eventTitle = "Takeoff Business Conclave & Expedition to Explore Dubai";
 const eventLocation = ["Dubai World Trade Centre", "Sheikh Zayed Rd, Dubai, UAE"];
 
-const navLinks = ["Home", "About", "Verticals", "Membership", "Events", "Community"]
+
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -78,12 +79,12 @@ export default function Header() {
           <nav className="hidden md:flex flex-1 justify-center">
             <ul className="flex items-center gap-2 text-base">
               {navLinks.map((link) => (
-                <li key={link}>
+                <li key={link.title}>
                   <a
                     className="inline-flex items-center rounded-full border border-[#E6E6E6] px-6 py-2 text-base font-medium text-[#243533] bg-white hover:bg-[#F5F5F5] transition"
-                    href="#"
+                    href={link.href}
                   >
-                    {link}
+                    {link.title}
                   </a>
                 </li>
               ))}
@@ -116,12 +117,12 @@ export default function Header() {
             <nav>
               <ul className="flex flex-col gap-2">
                 {navLinks.map((link) => (
-                  <li key={link}>
+                  <li key={link.href}>
                     <a
                       className="block w-full rounded-full border border-[#E6E6E6] px-6 py-3 text-base font-medium text-[#243533] bg-white hover:bg-[#F5F5F5] transition"
-                      href="#"
+                      href={link.href}
                     >
-                      {link}
+                      {link.title}
                     </a>
                   </li>
                 ))}

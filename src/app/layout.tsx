@@ -15,24 +15,24 @@ const dmSerif = DM_Serif_Display({
 const wantedSans = localFont({
   src: [
     {
-      path: "../../public/fonts/WantedSans-Regular-BF65baf13579965.otf",
+      path: "../../public/fonts/WantedSans-Regular.ttf",
       weight: "400",
       style: "normal"
     },
     {
-      path: "../../public/fonts/WantedSans-Medium-BF65baf1388963b.otf",
+      path: "../../public/fonts/WantedSans-Medium.ttf",
       weight: "500",
-      style: "normal"
+      style: "medium"
     },
     {
-      path: "../../public/fonts/WantedSans-SemiBold-BF65baf13722853.otf",
+      path: "../../public/fonts/WantedSans-SemiBold.ttf",
       weight: "600",
-      style: "normal"
+      style: "semibold"
     },
     {
-      path: "../../public/fonts/WantedSans-Bold-BF65baf135d5a25.otf",
+      path: "../../public/fonts/WantedSans-Bold.ttf",
       weight: "700",
-      style: "normal"
+      style: "bold"
     }
   ],
   variable: "--font-wanted-sans"

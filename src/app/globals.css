@@ -54,7 +54,7 @@
   --card-foreground: #f6f7f4;
   --popover: #22302d;
   --popover-foreground: #f6f7f4;
-  --primary: #178a86;
+  --primary: #359D9E;
   --primary-foreground: #ffffff;
   --secondary: #22302d;
   --secondary-foreground: #f6f7f4;
@@ -66,20 +66,20 @@
   --destructive-foreground: #ffffff;
   --border: color-mix(in oklab, #22302d 80%, #f6f7f4);
   --input: color-mix(in oklab, #22302d 80%, #f6f7f4);
-  --ring: #178a86;
-  --chart-1: #178a86;
+  --ring: #359D9E;
+  --chart-1: #359D9E;
   --chart-2: #f6f7f4;
   --chart-3: #22302d;
-  --chart-4: color-mix(in oklab, #178a86 60%, #f6f7f4);
+  --chart-4: color-mix(in oklab, #359D9E 60%, #f6f7f4);
   --chart-5: color-mix(in oklab, #22302d 70%, #f6f7f4);
   --sidebar: #22302d;
   --sidebar-foreground: #f6f7f4;
-  --sidebar-primary: #178a86;
+  --sidebar-primary: #359D9E;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #22302d;
   --sidebar-accent-foreground: #f6f7f4;
   --sidebar-border: color-mix(in oklab, #22302d 75%, #f6f7f4);
-  --sidebar-ring: #178a86;
+  --sidebar-ring: #359D9E;
 }
 
 @theme inline {

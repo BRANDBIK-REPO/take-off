@@ -1,22 +1,20 @@
-"use client"
+"use client";
 import "./header-animations.css";
 
-
- 
-
-import type { SVGProps } from "react"
-import Image from "next/image"
-import { useState } from "react"
-import { socialIcons } from "./socialIcons"
+import type { SVGProps } from "react";
+import Image from "next/image";
+import { useState } from "react";
+import { socialIcons } from "./socialIcons";
 import { navLinks } from "@/constants/navLinks";
 
 const eventTitle = "Takeoff Business Conclave & Expedition to Explore Dubai";
-const eventLocation = ["Dubai World Trade Centre", "Sheikh Zayed Rd, Dubai, UAE"];
-
-
+const eventLocation = [
+  "Dubai World Trade Centre",
+  "Sheikh Zayed Rd, Dubai, UAE",
+];
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <main className="fixed top-0 left-0 w-full z-50 bg-background text-foreground px-0 sm:px-0 lg:px-0  ">
       {/* Top Event Bar */}
@@ -26,11 +24,9 @@ export default function Header() {
           <div className="flex w-full items-center justify-between">
             {/* Left section: event title and location (desktop only) */}
             <div className="hidden md:flex items-center min-w-0">
-              <h2 className="text-base font-semibold text-[#22302d] bg-white px-3 py-1">{eventTitle}</h2>
-              <div className="flex flex-col md:ml-6 min-w-0">
-                <span className="text-sm text-[#178a86] font-semibold whitespace-nowrap">{eventLocation[0]}</span>
-                <span className="text-sm text-[#22302d] whitespace-nowrap">{eventLocation[1]}</span>
-              </div>
+              <h2 className="text-base  not-italic font-medium text-[#22302d] bg-white px-3 py-1">
+                {eventTitle}
+              </h2>
             </div>
             {/* Mobile: only show icons centered in top bar, no event title/location */}
             <div className="flex-1 flex md:hidden justify-center py-2">
@@ -106,13 +102,25 @@ export default function Header() {
             aria-label="Open menu"
             onClick={() => setMenuOpen((v) => !v)}
           >
-            <svg width="28" height="28" fill="none" stroke="#243533" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg
+              width="28"
+              height="28"
+              fill="none"
+              stroke="#243533"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
           </button>
         </div>
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="md:hidden px-2 pt-2 pb-4 bg-white/95 shadow-lg rounded-b-xl animate-slide-fade-in">
-            
             {/* No social icons here on mobile menu */}
             <nav>
               <ul className="flex flex-col gap-2">
@@ -132,15 +140,14 @@ export default function Header() {
               className="mt-4 block w-full text-center rounded-full px-8 py-3 text-base font-semibold text-white shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#359D9E] focus-visible:ring-offset-2 bg-[#359D9E] hover:brightness-105"
               href="#"
             >
-              Contact <ArrowRightIcon className="inline h-5 w-5 ml-2" aria-hidden />
+              Contact{" "}
+              <ArrowRightIcon className="inline h-5 w-5 ml-2" aria-hidden />
             </a>
           </div>
         )}
- 
       </div>
     </main>
-
-  )
+  );
 }
 
 function Logo() {
@@ -153,39 +160,59 @@ function Logo() {
       className="h-8 sm:h-8 w-auto object-contain"
       priority
     />
-  )
+  );
 }
 
 function PhoneIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      {...props}
+    >
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M3 5.25c0-1.243 1.007-2.25 2.25-2.25h1.072c.98 0 1.833.66 2.072 1.607l.59 2.36a2.25 2.25 0 0 1-.567 2.132l-1 1a13.5 13.5 0 0 0 6.724 6.724l1-1a2.25 2.25 0 0 1 2.132-.567l2.36.59a2.25 2.25 0 0 1 1.607 2.072V18.75A2.25 2.25 0 0 1 19.5 21h-1.5C9.94 21 3 14.06 3 5.25Z"
       />
     </svg>
-  )
+  );
 }
-
-
 
 function MailIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      {...props}
+    >
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M3 7.5c0-1.243 1.007-2.25 2.25-2.25h13.5c1.243 0 2.25 1.007 2.25 2.25v9c0 1.243-1.007 2.25-2.25 2.25h-13.5A2.25 2.25 0 0 1 3 16.5v-9Z"
       />
-      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 7.5 7.5 6 7.5-6" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="m4.5 7.5 7.5 6 7.5-6"
+      />
     </svg>
-  )
+  );
 }
 
 function PinIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      {...props}
+    >
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -193,13 +220,23 @@ function PinIcon(props: SVGProps<SVGSVGElement>) {
       />
       <circle cx={12} cy={10.5} r={2.25} />
     </svg>
-  )
+  );
 }
 
 function ArrowRightIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      {...props}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M5 12h14M13 6l6 6-6 6"
+      />
     </svg>
-  )
+  );
 }

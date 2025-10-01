@@ -4,10 +4,11 @@ import CultureIcon from "@/components/icons/CultureIcon";
 import GrowthIcon from "@/components/icons/GrowthIcon";
 import InnovationIcon from "@/components/icons/InnovationIcon";
 import TrustIcon from "@/components/icons/TrustIcon";
+import React from "react";
 
 export type OurValue = {
   number: string;
-  icon: any;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
   title: string;
   description: string;
 };

@@ -25,8 +25,7 @@ export const founders = [
       "Tech Entrepreneur of the Year 2023",
       "Forbes 30 Under 30 Alumni",
     ],
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    image: "/team/founde-1.webp",
   },
   {
     name: "Priya Nair",
@@ -38,8 +37,7 @@ export const founders = [
       "Winner of Women Leadership Award",
       "Community Builder of the Year",
     ],
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+    image: "/team/founder-2.webp",
   },
 ];
 

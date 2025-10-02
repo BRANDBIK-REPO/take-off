@@ -23,7 +23,7 @@ export default function ReadyToLaunch() {
           </h1>
 
           <p className="text-base sm:text-lg text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto">
-            Join Thrive's vibrant community of entrepreneurs and access
+            Join Thrive&apos;s vibrant community of entrepreneurs and access
             exclusive resources to help elevate your business to the next level
             and reach your potential.
           </p>

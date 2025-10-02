@@ -56,7 +56,7 @@ export default function AboutHeader() {
           <ArrowRightIcon
             width={14}
             height={11}
-            className="inline ml-2 group-hover:translate-x-2 transition-all duration-300"
+            className="inline ml-2 fill-white group-hover:translate-x-2 transition-all duration-300"
             aria-hidden
           />
         </button>

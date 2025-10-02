@@ -56,10 +56,9 @@ export default function AboutTakeOff() {
 
             <div className="space-y-4 text-[#506767] font-light leading-relaxed">
               <p>
-                TakeOff is more than a network — it's a launchpad for
-                entrepreneurial growth. Born in the UAE with deep Kerala–GCC
-                roots, we connect SMEs, founders, and professionals who want to
-                think bigger and achieve more.
+                {
+                  "TakeOff is more than a network — it's a launchpad for entrepreneurial growth. Born in the UAE with deep Kerala-GCC roots, we connect SMEs, founders, and professionals who want to think bigger and achieve more."
+                }
               </p>
 
               <p>
@@ -70,9 +69,9 @@ export default function AboutTakeOff() {
               </p>
 
               <p>
-                This is not just about events — it's about building a
-                results-driven, high-trust community that helps entrepreneurs
-                move from local success to global scale.
+                {
+                  "This is not just about events — it's about building a results-driven, high-trust community that helps entrepreneurs move from local success to global scale."
+                }
               </p>
             </div>
           </div>

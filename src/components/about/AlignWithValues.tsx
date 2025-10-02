@@ -10,7 +10,7 @@ export default function AlignWithValues() {
   ];
 
   return (
-    <section className="py-8 lg:py-16 max-w-[1920px] mx-auto">
+    <section className="pt-8 lg:py-16 max-w-[1920px] mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 overflow-hidden">
         <div className="relative col-span-1 lg:col-span-3  min-h-[400px]">
           <Image

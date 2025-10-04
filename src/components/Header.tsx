@@ -90,7 +90,7 @@ export default function Header() {
           <div className="hidden md:flex">
             <a
               className="inline-flex items-center gap-3 rounded-full px-8 py-3 text-base font-semibold text-white shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#359D9E] focus-visible:ring-offset-2 bg-[#359D9E] hover:brightness-105"
-              href="#"
+              href="/contact"
             >
               Contact
               <ArrowRightIcon className="h-5 w-5" aria-hidden />
@@ -138,7 +138,7 @@ export default function Header() {
             </nav>
             <a
               className="mt-4 block w-full text-center rounded-full px-8 py-3 text-base font-semibold text-white shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#359D9E] focus-visible:ring-offset-2 bg-[#359D9E] hover:brightness-105"
-              href="#"
+              href="/contact"
             >
               Contact{" "}
               <ArrowRightIcon className="inline h-5 w-5 ml-2" aria-hidden />

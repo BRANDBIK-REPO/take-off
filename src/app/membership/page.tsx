@@ -1,15 +1,10 @@
-import MembershipForm from "@/components/membership/MembershipForm";
- 
+import MembershipHero from "@/components/features/membership/MembershipHero";
 
-
-export default function Page(){
-  return(
+export default function MembershipPage() {
+  return (
     <>
-     <main className="  bg-[var(--surface)] pt-48 pb-12  ">
-      <div className="mx-auto px-4 w-full max-w-[1120px]">
-    <MembershipForm/>
-    </div>
-    </main>
+      <MembershipHero />
+      {/* Additional membership content can be added here */}
     </>
-  )
+  );
 }

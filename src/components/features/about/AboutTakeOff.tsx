@@ -1,6 +1,6 @@
 import Image from "next/image";
-import GroupIcon from "../icons/Group";
-import GlobeIcon from "../icons/Globe";
+import GroupIcon from "../../icons/Group";
+import GlobeIcon from "../../icons/Globe";
 
 export default function AboutTakeOff() {
   return (

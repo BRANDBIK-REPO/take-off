@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import { Director, directors, Founder, founders } from "@/constants/ourTeam";
-import ShareIcon from "../icons/ShareIcon";
-import FounderIcon from "../icons/FounderIcon";
-import LinkedInIcon from "../icons/LinkedInIcon";
-import MailIcon from "../icons/MailIcon";
+import ShareIcon from "../../icons/ShareIcon";
+import FounderIcon from "../../icons/FounderIcon";
+import LinkedInIcon from "../../icons/LinkedInIcon";
+import MailIcon from "../../icons/MailIcon";
 
 export default function MeetTeam() {
   return (

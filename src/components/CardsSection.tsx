@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata } from "next";
 
 const highlights = [
   {
@@ -13,30 +13,38 @@ const highlights = [
   },
   {
     title: "Tailored Support",
-    description: "Every founder's journey is unique. That's why we customize programs to match your goals.",
+    description:
+      "Every founder's journey is unique. That's why we customize programs to match your goals.",
   },
-]
+];
 
 export const metadata: Metadata = {
   title: "Growth Partner Highlights",
-}
+};
 
 export default function CardsSection() {
   return (
     <main className="bg-background">
-  <section className="mx-auto w-full px-4 sm:px-6 lg:px-20 py-16">
-        <div className="rounded-xl border border-border bg-card shadow-sm">
+      <section className="mx-auto w-full max-w-[1920px] py-16">
+        <div className="rounded border border-border ">
           <div className="flex flex-col md:grid md:grid-cols-3">
             {highlights.map((item, index) => (
               <article
                 key={item.title}
                 className="[&:not(:first-child)]:border-t [&:not(:first-child)]:border-border md:[&:not(:first-child)]:border-l md:[&:not(:first-child)]:border-t-0
-                  flex flex-col gap-4 px-6 py-8 sm:px-8 sm:py-10"
+                  flex  gap-4 px-6 py-8 sm:px-8 sm:py-10"
               >
-                <span aria-hidden="true" className="h-12 w-12 shrink-0 rounded-full bg-[var(--color-brand-navy)]" />
-                <div className="space-y-2 text-pretty">
-                  <h3 className="font-semibold text-lg text-foreground">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                <span
+                  aria-hidden="true"
+                  className="h-12 w-12 shrink-0 rounded-full bg-[#215273]"
+                />
+                <div className="flex flex-col space-y-2 text-pretty">
+                  <h3 className="font-medium text-lg sm:text-xl text-foreground font-sans not-italic">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm md:text-base leading-relaxed text-[#1F3130]">
+                    {item.description}
+                  </p>
                 </div>
               </article>
             ))}
@@ -44,5 +52,5 @@ export default function CardsSection() {
         </div>
       </section>
     </main>
-  )
+  );
 }

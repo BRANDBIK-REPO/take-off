@@ -1,6 +1,6 @@
 import Image from "next/image";
-import MissionIcon from "../icons/MissionIcon";
-import VisionIcon from "../icons/VisionIcon";
+import MissionIcon from "../../icons/MissionIcon";
+import VisionIcon from "../../icons/VisionIcon";
 
 export default function OurPromise() {
   return (

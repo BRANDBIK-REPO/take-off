@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ArrowRightIcon from "../icons/ArrowRightIcon";
+import ArrowRightIcon from "../../icons/ArrowRightIcon";
 import Link from "next/link";
 
 export default function ReadyToLaunch() {

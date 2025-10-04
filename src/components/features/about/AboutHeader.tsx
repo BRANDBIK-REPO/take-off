@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ArrowRightIcon from "../icons/ArrowRightIcon";
+import ArrowRightIcon from "../../icons/ArrowRightIcon";
 import { Variants } from "framer-motion";
 
 export default function AboutHeader() {

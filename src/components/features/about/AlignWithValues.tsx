@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import CheckIcon from "../icons/CheckIcon";
+import CheckIcon from "../../icons/CheckIcon";
 
 export default function AlignWithValues() {
   const benefits = [

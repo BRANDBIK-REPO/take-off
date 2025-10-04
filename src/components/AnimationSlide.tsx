@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 const marqueeItems = [
   "Flight to Success is Ready for Takeoff",
@@ -6,29 +6,34 @@ const marqueeItems = [
   "1000+ Business Connections Built & Growing",
   "Signature Events, Pitch Clubs & Business Brews",
   "Workshops, Masterclasses & Global Market Tours",
-]
+];
 
 export default function AnimationSlide() {
   return (
     <main className="w-full bg-background text-foreground">
       <section className="w-full py-8">
-        <div className="w-full border-y border-border bg-card shadow-sm">
+        <div className="w-full border-y border-border bg-card">
           <div className="overflow-hidden w-full">
             <div className="relative flex w-full">
-              <ul className="animate-marquee flex min-w-[200%] flex-none items-center w-full">
-                {Array.from({ length: 2 }).map((_, loopIndex) => (
+              <ul className="animate-marquee flex items-center">
+                {Array.from({ length: 4 }).map((_, loopIndex) => (
                   <h1
                     key={loopIndex}
-                    aria-hidden={loopIndex === 1}
-                    className="flex flex-none items-center gap-8 whitespace-nowrap px-0 py-4 text-sm italic leading-relaxed text-muted-foreground md:text-base w-full"
+                    aria-hidden={loopIndex > 0}
+                    className="flex flex-none items-center gap-8 whitespace-nowrap px-0 py-4 text-sm italic leading-relaxed text-muted-foreground md:text-base"
                   >
                     {marqueeItems.map((item, itemIndex) => (
                       <span
                         key={`${loopIndex}-${itemIndex}`}
                         className="flex flex-none items-center gap-4 md:gap-8"
                       >
-                        <span className="tracking-tight text-foreground/70 text-xs md:text-base">{item}</span>
-                        <span aria-hidden className="text-foreground/30 text-lg md:text-xl">
+                        <span className="tracking-tight text-foreground/70 text-xs md:text-base">
+                          {item}
+                        </span>
+                        <span
+                          aria-hidden
+                          className="text-foreground/30 text-lg md:text-xl mr-2"
+                        >
                           {"◦"}
                         </span>
                       </span>
@@ -42,16 +47,17 @@ export default function AnimationSlide() {
       </section>
       <style jsx global>{`
         @keyframes marquee {
-          from {
+          0% {
             transform: translateX(0);
           }
-          to {
+          100% {
             transform: translateX(-50%);
           }
         }
 
         .animate-marquee {
-          animation: marquee 22s linear infinite;
+          animation: marquee 44s linear infinite;
+          display: flex;
         }
 
         @media (max-width: 640px) {
@@ -59,13 +65,11 @@ export default function AnimationSlide() {
             font-size: 0.85rem;
             gap: 0.5rem;
           }
-          .animate-marquee li {
+          .animate-marquee h1 {
             gap: 0.5rem;
-            padding-left: 0;
-            padding-right: 0;
           }
         }
       `}</style>
     </main>
-  )
+  );
 }

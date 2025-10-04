@@ -6,16 +6,9 @@ import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
 
 interface EventCardProps {
   event: Event;
-  onRegister?: (eventId: string) => void;
 }
 
-export default function EventCard({ event, onRegister }: EventCardProps) {
-  const handleRegister = () => {
-    if (onRegister) {
-      onRegister(event.id);
-    }
-  };
-
+export default function EventCard({ event }: EventCardProps) {
   return (
     <div className="bg-white border border-border overflow-hidden rounded  transition-all duration-300 group p-6">
       <div className="relative overflow-hidden">
@@ -103,7 +96,7 @@ export default function EventCard({ event, onRegister }: EventCardProps) {
 
         <div className="flex items-center gap-6">
           <button
-            onClick={handleRegister}
+            onClick={() => {}}
             className="bg-[#215273] hover:bg-[#215273]/90 text-white px-6 py-2  rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 group/btn"
           >
             Register Now

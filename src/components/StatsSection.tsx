@@ -34,8 +34,8 @@ const StatsSection: React.FC = () => {
         <div className="flex lg:justify-end">
           <p className="text-left font-sans font-normal text-white text-base lg:text-lg xl:text-xl max-w-xs sm:max-w-sm lg:max-w-xl  leading-relaxed">
             Every number tells a story of collaboration, growth, and impact. At
-            TakeOff, milestones aren't just achievements - they're launchpads
-            for what's next.
+            TakeOff, milestones aren&apos;t just achievements - they&apos;re
+            launchpads for what&apos;s next.
           </p>
         </div>
       </div>

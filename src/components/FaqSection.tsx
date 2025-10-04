@@ -17,14 +17,14 @@ const FaqSection: React.FC = () => {
               <h2 className="font-serif not-italic xl:leading-18 text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black mb-10">
                 Got Questions?
                 <br />
-                We've Got You
+                We&apos;ve Got You
               </h2>
 
               <p className="font-sans text-[#506767] text-base leading-relaxed ">
                 At TakeOff, we understand the challenges businesses face and the
-                questions that arise along the way. Whether you're launching a
-                startup, scaling your operations, or seeking expert guidance, we
-                have the answers.
+                questions that arise along the way. Whether you&apos;re
+                launching a startup, scaling your operations, or seeking expert
+                guidance, we have the answers.
               </p>
             </div>
 
@@ -55,7 +55,8 @@ const FaqSection: React.FC = () => {
                   </svg>
                 </div>
                 <p className="font-sans text-white text-sm md:text-base lg:text-lg leading-relaxed">
-                  Didn't find what you're looking for? Contact our team.
+                  Didn&apos;t find what you&apos;re looking for? Contact our
+                  team.
                 </p>
               </Link>
             </div>

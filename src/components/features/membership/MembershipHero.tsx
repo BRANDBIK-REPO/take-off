@@ -17,9 +17,9 @@ export default function MembershipHero() {
             </h1>
 
             <p className="text-lg md:text-xl text-white/90 max-w-lg leading-relaxed">
-              More than a network — it's a launchpad for entrepreneuring growth.
-              Connect with SMEs, founders, and professionals who think bigger
-              and achieve more.
+              More than a network — it&apos;s a launchpad for entrepreneuring
+              growth. Connect with SMEs, founders, and professionals who think
+              bigger and achieve more.
             </p>
 
             <div className="pt-4">

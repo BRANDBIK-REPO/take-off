@@ -14,9 +14,9 @@ export default function ContactHero() {
               Contact <span className="not-italic font-serif">with us</span>
             </h1>
             <p className="text-sm md:text-base   text-[#506767] max-w-md">
-              Whether you're looking to join our community, partner with us, or
-              volunteer your expertise, we're here to help you connect with the
-              right opportunities.
+              Whether you&apos;re looking to join our community, partner with
+              us, or volunteer your expertise, we&apos;re here to help you
+              connect with the right opportunities.
             </p>
           </div>
 

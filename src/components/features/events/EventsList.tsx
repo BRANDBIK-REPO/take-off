@@ -4,13 +4,11 @@ import { EVENTS } from "@/constants/events";
 
 interface EventsListProps {
   events?: Event[];
-  showFilters?: boolean;
   maxEvents?: number;
 }
 
 export default function EventsList({
   events = EVENTS,
-  showFilters = true,
   maxEvents,
 }: EventsListProps) {
   return (

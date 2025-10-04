@@ -8,10 +8,6 @@ import { socialIcons } from "./socialIcons";
 import { navLinks } from "@/constants/navLinks";
 
 const eventTitle = "Takeoff Business Conclave & Expedition to Explore Dubai";
-const eventLocation = [
-  "Dubai World Trade Centre",
-  "Sheikh Zayed Rd, Dubai, UAE",
-];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

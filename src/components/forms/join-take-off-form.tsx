@@ -97,8 +97,8 @@ export default function JoinTakeOffForm() {
           Join the <span className="italic font-serif">TakeOff Community</span>
         </h1>
         <p className="text-base text-[#506767]">
-          Complete the form below, and we'll schedule a consultation to discuss
-          your needs
+          Complete the form below, and we&apos;ll schedule a consultation to
+          discuss your needs
         </p>
       </div>
 
